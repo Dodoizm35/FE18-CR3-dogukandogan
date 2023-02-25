@@ -1,0 +1,42 @@
+.px-4 {
+    padding-right: 2.5rem!important;
+    padding-left: 4.5rem!important;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #d0b3a6
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+}
+
+p {
+    color: #9a94a6;
+}
+
+.my-5 {
+    padding: 4.5rem!important;
+    background-color: #d0b3a6;
+}
+
+.black-text {
+    color: black;
+    font-family: 'Montserrat';
+}
+
+p {
+    font-family: 'Montserrat' !important;
+}
+
+.btn-danger {
+    font-family: 'Montserrat' !important;
+}
+
+.my-6 {
+    padding-left: 3.5rem!important;
+    padding-right: 3.5rem!important;
+    padding-top: 2.5rem!important;
+    background-color: #ffffff;
+}

@@ -1,0 +1,55 @@
+<div class="container">
+    <h1>Cart</h1>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th></th>
+                <th>Process</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cartItems">
+                <td>{{item.name}}</td>
+                <td>{{item.price | currency}}</td>
+                <td>1</td>
+                <td></td>
+                <td><button class="btn btn-danger btn-sm" (click)="removeFromCart(item)">Remove</button></td>
+            </tr>
+            <tr *ngIf="cartItems.length === 0">
+                <td colspan="5" class="text-end">Cart is empty.</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"></td>
+                <td><strong>Service:</strong></td>
+                <td><strong>{{(cartTotal * 0.1) | currency}}</strong></td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td><strong>Total:</strong></td>
+                <td><strong>{{cartTotal | currency}}</strong></td>
+            </tr>
+            <ng-container *ngIf="cartTotal > 40">
+                <tr>
+                    <td colspan="3"></td>
+                    <td><strong>Discount (15% off):</strong></td>
+                    <td><strong>{{(cartTotal * 0.15) | currency}}</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td><strong>Total with Discount:</strong></td>
+                    <td><strong>{{(cartTotal - (cartTotal * 0.15)) | currency}}</strong></td>
+                </tr>
+            </ng-container>
+        </tfoot>
+    </table>
+    <div *ngIf="cartItems.length > 0">
+        <a routerLink="/menu" class="btn btn-primary">Continue Shopping</a>
+        <button class="btn btn-success" (click)="checkout()">Checkout</button>
+    </div>
+</div>

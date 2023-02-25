@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Details</h1>
+    <hr>
+    <div *ngIf="menuItem" class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+                <img class="card-img-top" src="{{menuItem.image}}" alt="{{menuItem.name}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{menuItem.name}}</h5>
+                    <p class="card-text">{{menuItem.description}}</p>
+                    <p class="card-text"><strong>Price:</strong> {{menuItem.price | currency}}</p>
+                    <button class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!menuItem" class="alert alert-danger">Menu item not found.</div>
+</div>
